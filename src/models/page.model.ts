@@ -2,17 +2,17 @@ import { PostJson } from '../jsons';
 
 export class Page {
   constructor(
-    id: number,
-    date: Date,
-    slug: string,
-    link: string,
-    title: string,
-    content: string,
-    excerpt: string,
-    authorId: number,
-    featuredMediaId: number,
-    parentId: number,
-    menuOrder: number,
+    public id: number,
+    public date: Date,
+    public slug: string,
+    public link: string,
+    public title: string,
+    public content: string,
+    public excerpt: string,
+    public authorId: number,
+    public featuredMediaId: number,
+    public parentId: number,
+    public menuOrder: number,
   ) { }
 
   static fromJson(jsonPost: PostJson): Page {

@@ -16,7 +16,7 @@ export class Page {
   ) { }
 
   static fromJson(jsonPost: PostJson): Page {
-    return jsonPost.type === 'page' ? new Page(
+    return new Page(
       jsonPost.id,
       new Date(jsonPost.date),
       jsonPost.slug,
@@ -28,6 +28,6 @@ export class Page {
       jsonPost.featured_media,
       jsonPost.parent,
       jsonPost.menu_order
-    ) : undefined;
+    );
   }
 }

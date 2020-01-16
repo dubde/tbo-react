@@ -29,11 +29,11 @@ export interface PostJson extends JsonModel {
   sticky: boolean;
   template: string;
   format: string;
-  categories?: number[];
-  tags?: number[];
-  parent?: number;
-  "menu_order"?: number;
-  meta?;
+  categories: number[];
+  tags: number[];
+  parent: number;
+  "menu_order": number;
+  meta: [];
   "jetpack-related-posts"?: Array<{
     id: number,
     url: string,

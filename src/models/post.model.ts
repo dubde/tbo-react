@@ -4,22 +4,22 @@ import { CommentStatusMapper } from '../mappers';
 
 export class Post {
   constructor(
-    id: number,
-    date: Date,
-    slug: string,
-    link: string,
-    title: string,
-    content: string,
-    excerpt: string,
-    authorId: number,
-    featuredMediaId: number,
-    commentsStatus: CommentStatus,
-    categoriesId: number[],
-    tagsId: number[]
+    public id: number,
+    public date: Date,
+    public slug: string,
+    public link: string,
+    public title: string,
+    public content: string,
+    public excerpt: string,
+    public authorId: number,
+    public featuredMediaId: number,
+    public commentsStatus: CommentStatus,
+    public categoriesId: number[],
+    public tagsId: number[]
   ) { }
 
   static fromJson(jsonPost: PostJson): Post {
-    return jsonPost.type === 'post' ? new Post(
+    return new Post(
       jsonPost.id,
       new Date(jsonPost.date),
       jsonPost.slug,
@@ -32,6 +32,6 @@ export class Post {
       CommentStatusMapper.fromJson(jsonPost.comment_status),
       jsonPost.categories,
       jsonPost.tags
-    ) : undefined;
+    );
   }
 }
